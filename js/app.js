@@ -1,6 +1,14 @@
 
+var url = window.location.href;
+var swLocation =  '/Twitor-PWA/sw.js';
+
 if(navigator){
-    navigator.serviceWorker.register('/sw.js');
+
+    if(url.includes('localhost')){
+        swLocation = '/sw.js';
+    }
+
+    navigator.serviceWorker.register(swLocation);
 }
 
 
